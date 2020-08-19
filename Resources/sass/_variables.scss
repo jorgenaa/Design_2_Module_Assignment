@@ -1,0 +1,30 @@
+//Colors
+$primary-color: #6300e6;
+$secondary-color: #ff9405;
+$orange-color2: #d47a03;
+$tertiary-color: #b47bff;
+$background-color: #fefcff;
+$text-color: #010d04;
+
+/* GRADIENT LISTS
+============================================= */
+
+$list1: $primary-color 70%,
+$background-color 30%;
+
+@font-face {
+	font-family: 'Roboto Slab';
+	src: url(../../fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url(../../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+//Font variables
+$Roboto: 'Roboto',
+sans-serif;
+
+$Roboto-Slab: 'Roboto Slab',
+serif;

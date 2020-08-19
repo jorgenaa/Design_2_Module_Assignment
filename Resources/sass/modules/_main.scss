@@ -1,0 +1,458 @@
+.inspiration {
+  padding: 0;
+  width: 100%;
+
+  &__text {
+    @include px-to-rem(16);
+    padding: 0 1rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__img-container {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  &__img-wrapper {
+    padding: 0.5rem;
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    position: relative;
+    filter: drop-shadow(2px 11px 15px #ccc);
+
+    &:nth-child(4) {
+      margin-right: 0;
+    }
+
+    @include screen("tablet") {
+      width: 49%;
+
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+
+    @include screen("mobile") {
+      width: 49%;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+
+    &--hover {
+      @include screen("mobile") {
+        &:hover {
+          opacity: 0.7;
+          content: attr(title) ": ";
+        }
+      }
+    }
+  }
+}
+
+.sales {
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+
+  &__title {
+    @include px-to-rem(26);
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__img {
+    box-shadow: 2px 11px 15px #ccc;
+    width: 100%;
+  }
+}
+
+.rooms {
+  max-width: 1200px;
+
+  &__title {
+    @include px-to-rem(26);
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    filter: drop-shadow(2px 11px 15px #ccc);
+  }
+
+  &__section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 2rem;
+
+    @include screen("desktop") {
+      width: 47%;
+
+      &:nth-of-type(odd) {
+        margin-right: 2rem;
+      }
+    }
+
+    @include screen("tablet") {
+      width: 47%;
+
+      &:nth-of-type(odd) {
+        padding-right: 1rem;
+      }
+    }
+
+    @include screen("mobile") {
+      width: 100%;
+      padding: 0 1.5rem 3rem;
+    }
+  }
+
+  &__img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.intro-photo {
+  width: 100%;
+  height: 700px;
+  background-image: url('../../Resources/img/sofa.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: hue-rotate(-0.35turn) drop-shadow(2px 11px 15px #ccc);
+  text-align: center;
+
+  @include screen("tablet") {
+    width: 100%;
+    height: 432px;
+    background-image: url("../../Resources/img/sofa_768.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: hue-rotate(-0.35turn);
+  }
+
+  @include screen("mobile") {
+    width: 100%;
+    height: 211px;
+    margin-top: 1rem;
+    background-image: url("../../Resources/img/sofa_375.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    @include px-to-rem(78);
+    margin: 14rem 0 4rem;
+    color: $background-color;
+    filter: drop-shadow(2px 11px 15px black);
+
+    @include screen("tablet") {
+      @include px-to-rem(48);
+      margin: 9rem 0 2rem;
+    }
+
+    @include screen("mobile") {
+      @include px-to-rem(36);
+      margin: 3.5rem 1rem 0.5rem;
+      color: $background-color;
+    }
+  }
+}
+
+.btn-intro {
+  cursor: pointer;
+  border: none;
+  background-color: #666;
+  @include easeout;
+  @include px-to-rem(17);
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 17px 12px;
+
+  @include screen("mobile") {
+    padding: 12px 7px;
+  }
+
+  &--white-border {
+    background-color: rgba(0, 0, 0, 0);
+    color: $background-color;
+    border: solid 2px $background-color;
+  }
+
+  &--hover {
+    &:hover {
+      background-color: $background-color;
+      color: $text-color;
+    }
+  }
+}
+
+.products {
+  max-width: 1200px;
+  margin: 2rem auto 2rem;
+
+  @include screen("tablet") {
+    max-width: 768px;
+  }
+
+  &__text {
+    @include px-to-rem(16);
+    padding: 0 1rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: $text-color;
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include screen("tablet") {
+      flex-direction: column;
+    }
+
+    @include screen("mobile") {
+      flex-direction: column;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-basis: 45%;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 2px 11px 15px #ccc;
+
+    @include screen("tablet") {
+      padding: 0;
+      margin: 0 auto 1rem;
+      width: 100%;
+    }
+
+    @include screen("mobile") {
+      max-width: 360px;
+      padding: 0;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+  }
+
+  &__img-box {
+    @include screen("tablet") {
+      flex: 1;
+    }
+
+    @include screen("mobile") {
+      flex-basis: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text-box {
+    height: auto;
+    padding: 2.5rem;
+
+    &--color {
+      background-color: $primary-color;
+      color: $background-color;
+      @include px-to-rem(16);
+    }
+
+    @include screen("desktop") {
+      flex-basis: 400px;
+    }
+
+    @include screen("tablet") {
+      flex: 1;
+    }
+
+    @include screen("mobile") {
+      flex-basis: 100%;
+      padding: 1.5rem;
+    }
+  }
+
+  &__title {
+    @include px-to-rem(17);
+    font-weight: bold;
+    margin: 2rem 0;
+
+    @include screen("mobile") {
+      margin: 0;
+    }
+  }
+}
+
+.service {
+  @include gradient($primary-color 80%, $tertiary-color 100%, horizontal);
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  @include screen("mobile") {
+    flex-direction: column;
+  }
+
+  &__vertical-line {
+    border-left: 1px solid $background-color;
+    margin: 2rem;
+    height: 200px;
+
+    @include screen("mobile") {
+      display: none;
+    }
+  }
+
+  &__icons {
+    display: inline-block;
+    margin: 2rem 0;
+    -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    -ms-transition: -ms-transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+
+    @include screen("mobile") {
+      display: none;
+    }
+  }
+
+  &__icons-sm {
+    display: none;
+
+    @include screen("mobile") {
+      display: inline-block;
+      width: 40px;
+      margin: 2rem 0;
+      padding: 0;
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    color: $background-color;
+    vertical-align: top;
+    padding: 0 0 0 1rem;
+  }
+
+  &__text {
+    line-height: 1.5;
+    margin: 2rem 0;
+
+    @include screen("mobile") {
+      line-height: 1.5;
+      max-width: 200px;
+      margin: 1rem 0;
+    }
+  }
+}
+
+.btn {
+
+  cursor: pointer;
+  border: none;
+  background-color: #666;
+  @include easeout;
+  @include px-to-rem(14);
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-decoration: none;
+  padding: 12px 7px;
+  filter: drop-shadow(0 0.5rem 1rem rgb(14, 13, 13));
+
+  &--purple {
+    color: $background-color;
+    background-color: $primary-color;
+  }
+
+  &--orange {
+    color: $background-color;
+    @include gradient($secondary-color, $orange-color2, vertical);
+  }
+
+  &--hover {
+    &:hover {
+      opacity: 0.7;
+      content: attr(title) ": ";
+    }
+  }
+
+  &--absolute {
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+
+    @include screen("tablet") {
+      left: 30%;
+    }
+
+    @include screen("mobile") {
+      display: none;
+    }
+  }
+
+  &--purple-transp {
+    background-color: $primary-color;
+    color: $background-color;
+    opacity: 0.9;
+  }
+
+  &--orange-transp {
+    background-color: $secondary-color;
+    color: $background-color;
+    opacity: 0.9;
+  }
+
+  &--xl {
+    position: relative;
+
+
+    @include screen("desktop") {
+      width: 350px;
+      height: 120px;
+      top: -100px;
+      @include px-to-rem(17);
+    }
+
+    @include screen("tablet") {
+      width: 250px;
+      height: 100px;
+      top: -80px;
+      @include px-to-rem(14);
+    }
+
+    @include screen("mobile") {
+      width: 200px;
+      height: 50px;
+      top: -30px;
+    }
+  }
+}

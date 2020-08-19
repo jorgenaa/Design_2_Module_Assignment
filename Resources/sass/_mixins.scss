@@ -1,0 +1,64 @@
+//Ease out
+@mixin easeout {
+	transition: all .5s ease-out;
+}
+
+//Media queries
+
+@mixin screen($size) {
+	$desktop: "(min-width: 1105px)";
+	$tablet: "(min-width: 768px) and (max-width: 1104px)";
+	$mobile: "(max-width: 767px)";
+
+	@if $size==desktop {
+		@media only screen and #{$desktop} {
+			@content;
+		}
+	}
+
+	@else if $size==tablet {
+		@media only screen and #{$tablet} {
+			@content;
+		}
+	}
+
+	@else if $size==mobile {
+		@media only screen and #{$mobile} {
+			@content;
+		}
+	}
+
+	@else {
+		@media only screen and #{$size} {
+			@content;
+		}
+	}
+}
+
+//Pixel to Rem mixin
+
+@mixin px-to-rem($pxValue, $property: "font-size", $standard-size: 16) {
+	#{$property}: $pxValue + px;
+	#{$property}: $pxValue/$standard-size + rem;
+}
+
+//Gradient mixin
+
+@mixin gradient($start-color, $end-color, $orientation) {
+	background: $start-color;
+
+	@if $orientation=='vertical' {
+		background: -webkit-linear-gradient(top, $start-color, $end-color);
+		background: linear-gradient(to bottom, $start-color, $end-color);
+	}
+
+	@else if $orientation=='horizontal' {
+		background: -webkit-linear-gradient(left, $start-color, $end-color);
+		background: linear-gradient(to right, $start-color, $end-color);
+	}
+
+	@else {
+		background: -webkit-radial-gradient(center, ellipse cover, $start-color, $second-color, $end-color);
+		background: radial-gradient(ellipse at center, $start-color, $end-color);
+	}
+}

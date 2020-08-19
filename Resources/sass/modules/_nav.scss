@@ -1,0 +1,45 @@
+.nav {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+
+	@include screen('tablet') {
+		display: none;
+	}
+
+	@include screen('mobile') {
+		display: none;
+	}
+
+	&--black-green-background {
+		background-color: $text-color;
+	}
+
+	&__link {
+		display: inline-block;
+		background-color: none;
+		padding: 20px 5px;
+		margin: 0 2em;
+		text-decoration: none;
+		@include px-to-rem(17);
+		font-weight: bold;
+		text-transform: uppercase;
+
+		&--color {
+			color: $background-color;
+		}
+
+		&--hover {
+			&:hover {
+				color: $secondary-color;
+				text-decoration: none;
+				content: "Click here";
+			}
+		}
+
+		&--active {
+			color: $secondary-color;
+		}
+	}
+}
